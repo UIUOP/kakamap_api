@@ -1,5 +1,4 @@
 /*global kakao*/
-
 import React, { useEffect } from 'react'
 
 const KakaoMap = () => {
@@ -24,7 +23,8 @@ const KakaoMap = () => {
 
         // 마커를 생성합니다
         var marker = new kakao.maps.Marker({
-            position: markerPosition
+            position: markerPosition,
+            title: 'kh정보교육원'
         });
 
         // 마커가 지도 위에 표시되도록 설정합니다
@@ -41,6 +41,7 @@ const KakaoMap = () => {
 
         // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
         infowindow.open(map, marker);
+
     }, [lat, lon])
 
     return (
@@ -51,7 +52,6 @@ const KakaoMap = () => {
                     marginTop: '60px',
                     width: '100%',
                     height: '60vh',
-                    backgroundColor: '#c8c8c8'
                     //사이즈나 MAP에 대한 사이즈나 위치값은
                     //css로 조정해주면 된다.
                 }}
